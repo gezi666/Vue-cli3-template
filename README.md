@@ -52,7 +52,7 @@ npm run serve
 
 ### 项目打包
 ```
-npm run build <publicPath>
+npm run build
 ```
 
 ### 代码检测修复
