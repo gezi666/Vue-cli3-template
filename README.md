@@ -37,7 +37,6 @@
     |-- .eslintignore                    // eslint忽略文件
     |-- .eslintrc                        // eslint规则配置文件
     |-- .gitignore                       // git提交忽略文件
-    |-- .npmrc                           // npm私服地址
     |-- babel.config.js                  // babel配置文件
     |-- vue.config.js                    // 项目配置（包含webpack）文件
 ```
