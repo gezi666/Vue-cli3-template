@@ -3,11 +3,7 @@
 
 // const path = require('path')
 
-// 动态获取命令行输入的publicPath
-let HOST = process.argv[process.argv.length-1] || '/'
-
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'?HOST:'/',
   devServer: {
     // easymock模拟接口
     proxy: {        
