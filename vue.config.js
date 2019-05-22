@@ -15,10 +15,28 @@ module.exports = {
   },
   productionSourceMap:false,
   // webpack相关
-  chainWebpack: config => {
-    // console.log("config",config)
+  configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
       // 为生产环境修改配置...
+      config.optimization.splitChunks =  {
+        chunks: 'all',
+        maxInitialRequests: Infinity,
+        cacheGroups: {
+          commons: {
+            name: 'commons',
+            chunks: 'initial',
+            minChunks: 2
+          },
+          vendor: {
+            test: /[\\/]node_modules[\\/](echarts|element-ui)[\\/]/,
+            chunks: 'all',
+            name(module) {
+              const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
+              return `vendor~${packageName.replace('@', '')}`
+            }
+          }
+        }
+      }
     } else {
       // 为开发环境修改配置...
     }
