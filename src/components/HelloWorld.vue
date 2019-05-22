@@ -29,13 +29,16 @@ export default {
     }
   },
   mounted(){
+
+    console.log("全局变量API_URL-后台请求地址", API_URL)
+
     // 请求本地静态文件
     this.$axios.get("/static/demo-option.json")
       .then(res=>{
         this.initChart(res.data)
       })
     // 请求easy-mock接口
-    this.$axios.get("/demo")
+    this.$axios.get(API_URL+"/demo")
       .then(res=>{
         console.log("mock数据", res.data.data)
         this.name = res.data.data.name
