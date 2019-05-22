@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Demo from '../components/demo'
+const Demo = () => import('../components/demo')
 
 Vue.use(Router)
 
