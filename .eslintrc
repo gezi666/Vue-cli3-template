@@ -33,6 +33,7 @@
 		"comma-spacing": 1,
 		"brace-style": 1,
 		"no-multiple-empty-lines": 1,
-		"operator-linebreak": 1
+		"operator-linebreak": 1,
+		"no-undef": 0
 	}
 }
