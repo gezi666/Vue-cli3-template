@@ -19,8 +19,8 @@ try{
 module.exports = {
   publicPath: '/',
   devServer: {
-    // easymock模拟接口
-    proxy: 'http://10.10.50.190:7300/mock/5cbeb362abf86b3bdc64f106/example'
+    // easymock模拟接口地址
+    proxy: 'http://example'
   },
   productionSourceMap:false,
   // webpack相关
