@@ -5,26 +5,22 @@ const webpack = require('webpack')
 // const path = require('path')
 
 // 请求后台地址
-let api_url = "/"
+let api_url = ""
 
 // 动态获取命令行服务器地址
 try{
   let url = JSON.parse(process.env.npm_config_argv).remain[0]
-  api_url = url? url: "/"
+  api_url = url? url: ""
 } catch(e) {
-  api_url = "/"
+  api_url = ""
   console.log("获取process参数异常")
 }
 
 module.exports = {
+  publicPath: '/',
   devServer: {
     // easymock模拟接口
-    proxy: {        
-      '/demo': {
-        target: 'http://10.10.50.190:7300/mock/5cbeb362abf86b3bdc64f106/example',
-        changeOrigin: true
-      }
-    }
+    proxy: 'http://10.10.50.190:7300/mock/5cbeb362abf86b3bdc64f106/example'
   },
   productionSourceMap:false,
   // webpack相关

@@ -38,7 +38,7 @@ export default {
         this.initChart(res.data)
       })
     // 请求easy-mock接口
-    this.$axios.get(API_URL+"/demo")
+    this.$axios.get(API_URL + "/demo")
       .then(res=>{
         console.log("mock数据", res.data.data)
         this.name = res.data.data.name
