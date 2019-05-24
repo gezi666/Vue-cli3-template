@@ -17,7 +17,6 @@ try{
 }
 
 module.exports = {
-  publicPath: '/',
   devServer: {
     // easymock模拟接口地址
     proxy: 'http://example'
@@ -37,19 +36,13 @@ module.exports = {
       // 为生产环境修改配置...
       config.optimization.splitChunks =  {
         chunks: 'all',
-        maxInitialRequests: Infinity,
+        maxInitialRequests: 5,
         cacheGroups: {
-          commons: {
-            name: 'commons',
-            chunks: 'initial',
-            minChunks: 2
-          },
           vendor: {
             test: /[\\/]node_modules[\\/](echarts|element-ui)[\\/]/,
-            chunks: 'all',
             name(module) {
               const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
-              return `vendor~${packageName.replace('@', '')}`
+              return `vendors~${packageName.replace('@', '')}`
             }
           }
         }
