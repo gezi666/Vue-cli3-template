@@ -15,7 +15,6 @@
 		"no-alert": 2,
 		"no-debugger": 2,
 		"keyword-spacing": 2,
-		"no-unused-vars": 2,
 		"comma-dangle": 2,
 		"no-spaced-func": 2,
 		"no-extra-semi": 2,
@@ -34,6 +33,7 @@
 		"brace-style": 1,
 		"no-multiple-empty-lines": 1,
 		"operator-linebreak": 1,
-		"no-undef": 0
+		"no-undef": 0,
+		"no-unused-vars": 0
 	}
 }
