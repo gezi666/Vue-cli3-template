@@ -8,33 +8,34 @@ const webpack = require('webpack')
 let api_url = ""
 
 // 动态获取命令行服务器地址
-try{
+try {
   let url = JSON.parse(process.env.npm_config_argv).remain[0]
-  api_url = url? url: ""
-} catch(e) {
+  api_url = url ? url : ""
+} catch (e) {
   api_url = ""
   console.log("获取process参数异常")
 }
 
 module.exports = {
+  publicPath: "./",
   devServer: {
     // easymock模拟接口地址
     proxy: 'http://example'
   },
-  productionSourceMap:false,
+  productionSourceMap: false,
   // webpack相关
   configureWebpack: config => {
-    
+
     // 定义全局API请求地址
     config.plugins.push(
       new webpack.DefinePlugin({
         API_URL: JSON.stringify(api_url)
       })
     )
-    
+
     if (process.env.NODE_ENV === 'production') {
       // 为生产环境修改配置...
-      config.optimization.splitChunks =  {
+      config.optimization.splitChunks = {
         chunks: 'all',
         maxInitialRequests: 5,
         cacheGroups: {
