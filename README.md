@@ -1,21 +1,21 @@
-# 基于Vue-cli 3搭建的PC端可视化单页应用快速开发模板
+# 基于Vue-cli 3搭建的PC端单页应用快速开发模板
 
 # 特点：
-1、 基于node v10.15.3、npm v6.4.1、vue-cli 3、webpack 4、babel 7搭建；
+  - 基于node v10.15.3、npm v6.4.1、vue-cli 3、webpack 4、babel 7搭建；
 
-2、 内置axios、echarts 4、element-ui 2、vue-router、vuex、stylus等；
+  - 内置axios、element-ui、vue-router、vuex、stylus等；
 
-3、 开启Eslint检测；
+  - Eslint检测；
 
-4、 通过easymock模拟接口；
+  - easymock模拟接口；
 
-5、 支持命令行自定义接口地址；
+  - 支持命令行自定义生产环境接口地址；
 
-6、 路由组件动态加载；
+  - 路由组件动态加载；
 
-7、 打包分离体积大的第三方包，比如echarts和element-ui；
+  - 打包分离体积大的第三方包，比如element-ui；
 
-8、 使用现代模式构建应用，为现代浏览器交付原生支持的 ES2015 代码，并生成一个兼容老浏览器的包用来自动回退。
+  - 使用现代模式构建应用，为现代浏览器交付原生支持的 ES2015 代码，并生成一个兼容老浏览器的包用来自动回退。
 
 # 目录简介
 
@@ -53,12 +53,12 @@ npm install
 
 ### 启动开发环境
 ``` 
-npm run serve <api_url>
+npm start
 ```
 
 ### 项目打包
 ```
-npm run build <api_url>
+npm run build --api-url <api_url>
 ```
 
 ### 代码检测修复

@@ -6,15 +6,15 @@
 
 <script>
 export default {
-  name: 'first'
-}
+  name: "first"
+};
 </script>
 
 <style scoped>
-#demo{
-  margin:30px auto
+#demo {
+  margin: 30px auto;
 }
-h1{
+h1 {
   font-size: 20px;
 }
 </style>
