@@ -27,11 +27,11 @@ export default {
     console.log("全局变量API_URL-后台请求地址", API_URL);
 
     // 请求本地静态文件
-    this.$request("get", "/static/demo-option.json").then(res => {
+    this.$request("get", "/static/demo-option.json").then((res) => {
       console.log("本地静态资源", res);
     });
     // 请求easy-mock接口
-    this.$request("get", "/demo").then(res => {
+    this.$request("get", "/demo").then((res) => {
       console.log("mock数据", res.data);
       this.name = res.data.name;
     });
@@ -40,8 +40,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="stylus" scoped>
-h1
-  color lightblue
-  font-size 30px
+<style lang="scss" scoped>
+h1 {
+  color: lightblue;
+  font-size: 30px;
+}
 </style>
